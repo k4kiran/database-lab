@@ -1,0 +1,23 @@
+SQL> 
+SQL> select * from employee;
+
+Wed Nov 08                                                                                                                                                                                     page    1
+                                                                                            EMPLOYEE REPORT
+
+EMPLOYEE ID  EMPLOYEE NAM JOB          MANAGER      DEPARTMENT N HIRE DATE        SALARY  COMMISION                                                                                                     
+------------ ------------ ------------ ------------ ------------ ------------ ---------- ----------                                                                                                     
+E0010        kjose                                                                 25000                                                                                                                
+e111         kiranbal                                                              25000                                                                                                                
+E0001        ABEY         Tester       E0004        D004         15-DEC-12         30000        500                                                                                                     
+E0002        Jesto        Analyst      E0001        D002         24-APR-11         25000        650                                                                                                     
+E0003        Adarsh       senior clerk E0004        D004         10-JAN-13         15000        500                                                                                                     
+E0005        Bony         Manager                   D001         11-APR-11         50000       1103                                                                                                     
+E0007        kiran        engineer     E0001        D006         22-DEC-17         30000        700                                                                                                     
+
+
+                                                                                                  END
+
+7 rows selected.
+
+SQL> 
+SQL> SPOOL OFF;

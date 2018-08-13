@@ -1,0 +1,21 @@
+SQL> 
+SQL> select * from client WHERE state not like 'Kerala';
+
+Wed Nov 08                                                                                                               page    1
+                                                          CLIENT REPORT
+
+CLIENT NUMBE CLIENT NAME  CITY            PINCODE STATE            BALDUE                                                         
+------------ ------------ ------------ ---------- ------------ ----------                                                         
+C03          Anjana       Salem            680345 TamilNadu          5000                                                         
+C04          Sneha        Pune             680223 Maharashtra         500                                                         
+C05          Annet        Gandipuram       680321 Karnataka          7600                                                         
+C06          Ann          Bombay           682111 Maharashtra        2055                                                         
+
+
+
+
+
+                                                            END REPORT
+
+SQL> 
+SQL> SPOOL OFF;

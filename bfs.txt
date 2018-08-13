@@ -1,0 +1,41 @@
+ #include<stdio.h>
+ int visited[10],n,a[10][10],q[10]={0},front=0,rear=0;
+ void bfs(v)
+ {
+         visited[v]=1;
+         q[rear]=v;
+         rear++;
+         while(rear!=front)
+         {
+         int i;
+         int u=q[front];
+         printf("\n %d",u);
+         front++;
+         for(i=0;i<n;i++)
+         {
+         if(!visited[i]&&a[u][i])
+         {
+         q[rear]=i;
+         rear++;
+         visited[i]=1;
+         }
+         }
+         printf("\n");
+         }
+ }
+ main()
+ {
+         int i,j;
+         printf("\n enter no\n");
+         scanf("%d",&n);
+         printf("\n enter elements\n");
+         for(i=0;i<n;i++)
+         {
+         for(j=0;j<n;j++)
+         {
+         scanf("%d",&a[i][j]);
+         }
+         }
+         bfs(0);
+ }
+

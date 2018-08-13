@@ -1,0 +1,44 @@
+DAY 9
+
+
+create or replace package packer as
+function cominc(eid varchar2,new number) return number;
+
+procedure insertnew(id varchar2,name varchar2);
+end packer;
+/
+
+create or replace package body packer as
+
+procedure insertnew(id varchar2,name varchar2) is
+
+begin
+
+insert into employee(empid,empname) values(id,name);
+end insertnew;
+
+function cominc(eid varchar2,new number) return number is
+
+begin
+
+update employee set commision=commision+new where empid=eid;
+return 0;
+end cominc;
+
+
+
+end packer;
+/
+
+DECLARE
+id varchar2(20);
+increment number;
+call number;
+
+BEGIN
+packer.insertnew('e000','kiranvb');
+id:='&id';
+increment:=&increment;
+call:=packer.cominc(id,increment);
+END;
+/

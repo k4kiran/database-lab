@@ -1,0 +1,191 @@
+SQL> CREATE TABLE employee(empid number(5) PRIMARY KEY,empname varchar2(20),job varchar2(10),m
+ number(5),deptno number(5),hiredate date,sal number(7,3));
+
+Table created.
+
+SQL> DESC employee;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ EMPID                                     NOT NULL NUMBER(5)
+ EMPNAME                                            VARCHAR2(20)
+ JOB                                                VARCHAR2(10)
+ MANAGER                                            NUMBER(5)
+ DEPTNO                                             NUMBER(5)
+ HIREDATE                                           DATE
+ SAL                                                NUMBER(7,3)
+
+SQL> CREATE TABLE dept(deptno number(5) PRIMARY KEY,deptname varchar2(20),location varchar2(20
+
+Table created.
+
+SQL> DESC dept
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ DEPTNO                                    NOT NULL NUMBER(5)
+ DEPTNAME                                           VARCHAR2(20)
+ LOCATION                                           VARCHAR2(20)
+
+SQL> COMMIT;
+
+Commit complete.
+
+SQL> ALTER TABLE employee ADD(commision number(4));
+
+Table altered.
+
+SQL> DESC employee;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ EMPID                                     NOT NULL NUMBER(5)
+ EMPNAME                                            VARCHAR2(20)
+ JOB                                                VARCHAR2(10)
+ MANAGER                                            NUMBER(5)
+ DEPTNO                                             NUMBER(5)
+ HIREDATE                                           DATE
+ SAL                                                NUMBER(7,3)
+ COMMISION                                          NUMBER(4)
+
+SQL> commit;
+
+Commit complete.
+
+SQL> ALTER TABLE employee MODIFY(job varchar2(20));
+
+Table altered.
+
+SQL> desc employee;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ EMPID                                     NOT NULL NUMBER(5)
+ EMPNAME                                            VARCHAR2(20)
+ JOB                                                VARCHAR2(20)
+ MANAGER                                            NUMBER(5)
+ DEPTNO                                             NUMBER(5)
+ HIREDATE                                           DATE
+ SAL                                                NUMBER(7,3)
+ COMMISION                                          NUMBER(4)
+
+SQL> commit;
+
+Commit complete.
+
+SQL> 
+SQL> DELETE location from employee;
+DELETE location from employee
+                *
+ERROR at line 1:
+ORA-00933: SQL command not properly ended
+
+
+SQL> 
+SQL> DELETE location from employee;
+DELETE location from employee
+                *
+ERROR at line 1:
+ORA-00933: SQL command not properly ended
+
+
+SQL> ALTER TABLE dept DROP(location);
+
+Table altered.
+
+SQL> Desc dept;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ DEPTNO                                    NOT NULL NUMBER(5)
+ DEPTNAME                                           VARCHAR2(20)
+
+SQL> commit;
+
+Commit complete.
+
+SQL> desc employee;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ EMPID                                     NOT NULL NUMBER(5)
+ EMPNAME                                            VARCHAR2(20)
+ JOB                                                VARCHAR2(20)
+ MANAGER                                            NUMBER(5)
+ DEPTNO                                             NUMBER(5)
+ HIREDATE                                           DATE
+ SAL                                                NUMBER(7,3)
+ COMMISION                                          NUMBER(4)
+
+SQL> ALTER TABLE employee rename(sal salary);
+ALTER TABLE employee rename(sal salary)
+                           *
+ERROR at line 1:
+ORA-14155: missing PARTITION or SUBPARTITION keyword
+
+
+SQL> ALTER TABLE employee rename(sal,salary);
+ALTER TABLE employee rename(sal,salary)
+                           *
+ERROR at line 1:
+ORA-14155: missing PARTITION or SUBPARTITION keyword
+
+
+SQL> 
+SQL> ALTER TABLE employee rename column sal TO salary;
+
+Table altered.
+
+SQL> desc employee
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ EMPID                                     NOT NULL NUMBER(5)
+ EMPNAME                                            VARCHAR2(20)
+ JOB                                                VARCHAR2(20)
+ MANAGER                                            NUMBER(5)
+ DEPTNO                                             NUMBER(5)
+ HIREDATE                                           DATE
+ SALARY                                             NUMBER(7,3)
+ COMMISION                                          NUMBER(4)
+
+SQL> commit;
+
+Commit complete.
+
+SQL> DROP TABLE dept;
+
+Table dropped.
+
+SQL> commit;
+
+Commit complete.
+
+SQL> SELECT 'kiran','21'
+  2  from DUAL;
+
+'KIRA '2
+----- --
+kiran 21
+
+SQL> commit;
+
+Commit complete.
+
+SQL> 
+SQL> select sysdate 
+  2  from DUAL;
+
+SYSDATE
+---------
+02-AUG-17
+
+SQL> COMMIT;
+
+Commit complete.
+
+SQL> SELECT 15+10-5*2/5
+  2  FROM dual;
+
+15+10-5*2/5
+-----------
+         23
+
+SQL> COMMIT;
+
+Commit complete.
+
+SQL> SELECT * FROM user_tables;

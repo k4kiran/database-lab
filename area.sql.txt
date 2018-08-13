@@ -1,0 +1,20 @@
+DECLARE
+     
+      rad INT;
+      ar  NUMBER(10,4);
+
+
+BEGIN
+
+      rad:=5;
+      WHILE(c<16)
+      loop
+
+        ar:=3.14*rad*rad;
+
+        INSERT INTO areas  VALUES(i,ar);
+      END loop;
+END
+/
+
+     

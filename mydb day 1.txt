@@ -1,0 +1,63 @@
+app program development lab
+
+
+day 1
+date:2/8/2017
+
+
+
+
+
+CREATE TABLE employee(empid number(5) PRIMARY KEY,empname varchar2(20),job varchar2(10),manager number(5),deptno number(5),hiredate date,sal number(7,3);
+
+
+
+
+
+CREATE TABLE dept(deptno number(5) PRIMARY KEY,deptname varchar2(20),location varchar2(20));
+
+
+
+
+
+
+ALTER TABLE employee ADD(commision number(4));
+
+
+
+ALTER TABLE employee MODIFY(job varchar2(20));
+
+
+
+
+
+
+ALTER TABLE dept DROP(location);
+
+
+ALTER TABLE employee rename column sal TO salary;
+
+
+
+DROP TABLE dept;
+
+
+SELECT 'kiran','21'
+from DUAL;
+
+
+
+
+
+select sysdate 
+from DUAL;
+
+
+
+
+
+SELECT 15+10-5*2/5
+FROM dual;
+
+
+select table_name from user_tables;

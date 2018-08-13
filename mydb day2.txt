@@ -1,0 +1,157 @@
+
+application development lab \
+
+day 2
+date:9/8/2017
+
+
+q1:
+
+INSERT INTO employee
+values('E0001','ABEY','Tester','E0004','D004','15-DEC-2012',30000,500);
+
+INSERT INTO employee
+values('E0002','Jesto','Analyst','E0001','D002','24-APR-2011','25000','650');
+
+
+INSERT INTO employee
+values('E0003','Adarsh','Clerk','E0004','D004','10-JAN2013',15000,500);
+
+
+INSERT INTO employee
+values('E0004','Kevin','Admin','E0005','D005','10-oct-2013',20000,1750);
+
+
+
+INSERT INTO employee
+values('E0005','Bony','Manager','','D001','11-apr-2011',50000,1000);
+
+
+
+Q2:
+
+create table dept(deptno varchar2(20),deptname varchar2(20),location varchar2(20));
+ 
+
+
+insert into dept
+values('D001','DeptA','A block');
+
+
+
+insert into dept
+values('D002','DeptB','B block');
+
+
+insert into dept
+values('D003','Deptc','C block');
+
+
+insert into dept
+values('D004','DeptD','D block');
+
+
+q3:
+
+
+create table client(cno varchar2(6),cname varchar2(20),city varchar2(15),pincode number(8),state varchar2(15),baldue number(10,2));
+
+
+
+insert into client
+values('C01','Nimmy','Cochin',680324,'Kerala',14000);
+
+
+insert into client
+values('C02','Susan','Cochin',680324,'Kerala',0);
+
+
+insert into client
+values('C03','Anjana','Salem',680345,'TamilNadu',5000);
+
+
+insert into client
+values('C04','Sneha','Pune',680223,'Maharashtra',500);
+
+
+insert into client
+values('C05','Annet','Gandipuram',680321,'Karnataka',7600);
+
+
+insert into client
+values('C06','Ann','Bombay',682111,'Maharashtra',2055);
+
+
+
+
+
+
+e:
+
+
+select * from employee;
+select * from dept;
+select * from client;
+
+
+f:
+
+
+INSERT INTO employee
+values('E0001','sasi','Tester','E0004','D004','15-DEC-2012',30000,500);
+
+
+g:
+
+select * from client
+where rownum<=4;
+
+h:
+
+select empname,hiredate,salary
+from employee;
+
+I:
+
+select empname
+from employee
+where empname like 'A%' or empname like 'K%';
+
+j;
+
+SELECT DISTINCT city 
+from client;
+
+K:
+
+select empname
+from employee
+where job='manager' AND hiredate >'31-dec-2012' and salary>17500;
+
+
+L:
+
+select empname
+from employee
+where empname >='E%' and empname <='L%';
+
+M:
+
+update client 
+set city ='delhi'
+where cno='c03';
+
+
+N:
+
+update employee
+set commision=600
+where empname='manu';
+
+
+
+
+O:
+
+select cname,'from',city,'has',baldue,'baldue'
+from client;

@@ -1,0 +1,44 @@
+10
+a:  select name from client order by name;
+
+b:  select deptno,max(salary) from employee group by deptno;
+
+c:  select deptno,min(salary) from employee where deptno!='d001' group by deptno;
+
+
+11
+a:  select deptno from dept union select deptno from employee;
+
+b:  select deptno from employee minus select deptno from dept;
+
+c: select * from employee where salary>(select salary from employee where empname='adarsh');
+
+d:   select empname,salary from employee where salary<(select min(salary) from employee where deptno
+     ='d004');
+
+e:  select empname,salary from employee where salary>(select min(salary) from employee) and job like 'A%';
+
+f:  SELECT *
+    FROM employee 
+    INNER JOIN dept
+    ON employee.deptno = dept.deptno;
+
+g:  SELECT empname,job,manager
+    FROM employee 
+    LEFT OUTER JOIN dept
+    ON employee.deptno = dept.deptno;
+
+h: SELECT empname,job,manager
+  FROM employee 
+  RIGHT OUTER JOIN dept
+  ON employee.deptno = dept.deptno;
+
+i: 
+   SELECT empname,job,manager
+   FROM employee 
+   FULL OUTER JOIN dept
+   ON employee.deptno = dept.deptno;
+
+
+
+

@@ -1,0 +1,54 @@
+day 10
+
+generate report 
+
+
+16 a:
+
+set pagesize 16;
+set linesize 200;
+ttitle 'EMPLOYEE REPORT';
+btitle 'END';
+
+column empid format a12 heading 'EMPLOYEE ID';
+column empname format a12 heading 'EMPLOYEE NAME';
+column job format a12 heading 'JOB';
+column manager format a12 heading 'MANAGER';
+column deptno format a12 heading 'DEPARTMENT NO';
+column hiredate format a12 heading 'HIRE DATE';
+
+SPOOL 'C:\kiran\empreport.txt';
+
+select * from employee;
+
+SPOOL OFF;
+
+
+
+16 B:
+
+set pagesize 16;
+set linesize 130;
+ttitle 'CLIENT REPORT';
+btitle 'END REPORT';
+
+column cno format a12 heading 'CLIENT NUMBER';
+column cname format a12 heading 'CLIENT NAME';
+column city format a12 heading 'CITY';
+column state format a12 heading 'STATE';
+
+
+SPOOL 'C:\kiran\creport.txt';
+
+select * from client WHERE state not like 'Kerala';
+
+SPOOL OFF;
+
+
+
+
+
+
+avoid this
+UPDATE TABLE EMPLOYEE SET SALARY=35000
+WHERE EMPID=E0001;
